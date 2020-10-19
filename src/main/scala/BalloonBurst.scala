@@ -27,9 +27,8 @@ object BalloonBurst extends App {
     println("Enter balloon inflate limits separated by space, e.g. 10 2 4 6 9 2\n")
 
     InputParser.parseLimits(readLine()) match {
-      case Some(value) =>
+      case Some(balloonLimits) =>
 
-        val balloonLimits: Seq[Int] = value
         val finalScore = (for(balloon <- balloonLimits) yield inflateBalloon(balloon, 0)).sum
 
         println(s"\nFinal score: $finalScore")
